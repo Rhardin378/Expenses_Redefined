@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Document</title>
+</head>
+<body class="bg-gray-800">
+    <nav class="flex flex-col bg-green-700 sm:flex-row flex-wrap md:items-center fixed top-0 z-20 w-full px-4 md:px-5 lg:px-16 py-2 justify-between">
+
+
+        <div class="flex justify-between sm:justify-around gap-x-2 text-white items-center">
+    
+          <!-- Link To Direct to Home Page -->
+          <!-- This can be a logo or a simple text (or both). Just write it in-between the anchor tag below-->
+          <a href="/expenses" class="text-3xl font-bold py-1 flex items-center ">
+            Expenses Redefined
+          </a>
+    
+    
+          <!-- Hamburger -->
+          <button class="sm:hidden cursor-pointer flex flex-col justify-center gap-y-1" id="hamburger" aria-label="menu">
+            <div class="w-6 h-1 bar bg-white rounded-lg"></div>
+            <div class="w-6 h-1 bar bg-white rounded-lg"></div>
+            <div class="w-6 h-1 bar bg-white rounded-lg"></div>
+          </button>
+    
+        </div>
+    
+    
+        <ul class="hidden sm:flex text-gray-400 justify-end items-center gap-x-7 gap-y-5 mt-5 sm:mt-0"
+          id="links">
+          <li class="">
+            <a href="/" class="hover:text-gray-300 active">Home</a>
+          </li>
+          <li class="">
+            <a href="/login" class="hover:text-gray-300">Login</a>
+          </li>
+          <li class="">
+            <a href="logout" class="hover:text-gray-300">Logout</a>
+          </li>
+    
+        </ul>
+    
+      </nav>
+      
+    <div class="mt-20 mx-auto flex flex-col max-w-md p-6 rounded-md sm:p-10 bg-gray-900 text-gray-100">
+        <div class="mb-8 text-center">
+            <h1 class="my-3 text-4xl font-bold">Sign in</h1>
+            <p class="text-sm text-gray-400">Sign in to access your account</p>
+        </div>
+        <% if (locals.messages.errors) { %>
+            <% messages.errors.forEach( el => { %>
+                <div class="text-red-600"><%= el.msg %></div>
+            <% }) %>    
+        <% } %>
+        <% if (locals.messages.info) { %>
+            <% messages.info.forEach( el => { %>
+                <div class="text-red-600"><%= el.msg %></div>
+            <% }) %>    
+        <% } %>
+        <form novalidate="" action="/login" method="POST" class="space-y-12 ng-untouched ng-pristine ng-valid">
+            <div class="space-y-4">
+                <div>
+                    <label for="email" class="block mb-2 text-sm">Email address</label>
+                    <input type="email" name="email" id="email" placeholder="Email" class="w-full px-3 py-2 border rounded-md border-gray-700 bg-gray-900 text-gray-100 focus:ring-green-400 focus:border-green-400 focus:ring-2">
+                </div>
+                <div>
+                    <div class="flex justify-between mb-2">
+                        <label for="password" class="text-sm">Password</label>
+                    </div>
+                    <input type="password" name="password" id="password" placeholder="*****" class="w-full px-3 py-2 border rounded-md border-gray-700 bg-gray-900 text-gray-100 focus:ring-green-400 focus:border-green-400 focus:ring-2">
+                </div>
+            </div>
+            <div class="space-y-2">
+                <div>
+                    <button type="submit" class="w-full px-8 py-3 font-semibold rounded-md bg-green-400 text-gray-900">Sign in</button>
+                </div>
+                <p class="px-6 text-sm text-center text-gray-400">Don't have an account yet?
+                    <a rel="noopener noreferrer" href="/signup" class="hover:underline text-violet-400">Sign up</a>.
+                </p>
+            </div>
+        </form>
+    </div>
+    <script src="js/navbar.js"></script>
+</body>
+</html>

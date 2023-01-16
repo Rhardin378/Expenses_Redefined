@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Show</title>
+</head>
+<body class="bg-gray-800 text-gray-100">
+    <nav class="flex flex-col bg-green-700 sm:flex-row flex-wrap md:items-center fixed top-0 z-20 w-full px-4 md:px-5 lg:px-16 py-2 justify-between">
+
+
+        <div class="flex justify-between sm:justify-around gap-x-2 text-white items-center">
+    
+          <!-- Link To Direct to Home Page -->
+          <!-- This can be a logo or a simple text (or both). Just write it in-between the anchor tag below-->
+          <a href="/expenses" class="text-3xl font-bold py-1 flex items-center ">
+            Expenses Redefined
+          </a>
+    
+    
+          <!-- Hamburger -->
+          <button class="sm:hidden cursor-pointer flex flex-col justify-center gap-y-1" id="hamburger" aria-label="menu">
+            <div class="w-6 h-1 bar bg-white rounded-lg"></div>
+            <div class="w-6 h-1 bar bg-white rounded-lg"></div>
+            <div class="w-6 h-1 bar bg-white rounded-lg"></div>
+          </button>
+    
+        </div>
+    
+    
+        <ul class="hidden sm:flex text-gray-400 justify-end items-center gap-x-7 gap-y-5 mt-5 sm:mt-0"
+          id="links">
+          <li class="">
+            <a href="/" class="hover:text-gray-300 active">Home</a>
+          </li>
+          <li class="">
+            <a href="/login" class="hover:text-gray-300">Login</a>
+          </li>
+          <li class="">
+            <a href="logout" class="hover:text-gray-300">Logout</a>
+          </li>
+    
+        </ul>
+    
+      </nav>
+    <section class="my-20 flex flex-col">
+      <h1 class="font-bold text-center text-4xl">Product: <%= expense.product %></h1>
+    
+    <p class="flex self-center text-2xl mt-10 text-center w-2/3 mb-20">On the date of <%=expense.date%>, you spent $<%= expense.price%> on <%=expense.product%> at <%=expense.location%>.   The payment method used was: <%=expense.paymentMethod%>.</p>
+
+    <div class="flex space-x-2 self-center">
+      <button type="button" ></button>
+    </div>
+    <a class=" flex self-center text-lg p-2 text-center w-1/3 rounded-full bg-green-600 hover:text-gray-800" href="/expenses">return to expenses</a>
+</section>
+
+    <script src="js/navbar.js"></script>
+</body>
+</html>

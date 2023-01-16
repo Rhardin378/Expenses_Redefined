@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Document</title>
+</head>
+<body class="bg-gray-800 text-gray-100">
+
+    <nav class="flex flex-col bg-green-700 sm:flex-row flex-wrap md:items-center fixed top-0 z-20 w-full px-4 md:px-5 lg:px-16 py-2 justify-between">
+
+
+        <div class="flex justify-between sm:justify-around gap-x-2 text-white items-center">
+    
+          <!-- Link To Direct to Home Page -->
+          <!-- This can be a logo or a simple text (or both). Just write it in-between the anchor tag below-->
+          <a href="/expenses" class="text-3xl font-bold py-1 flex items-center ">
+            Expenses Redefined
+          </a>
+    
+    
+          <!-- Hamburger -->
+          <button class="sm:hidden cursor-pointer flex flex-col justify-center gap-y-1" id="hamburger" aria-label="menu">
+            <div class="w-6 h-1 bar bg-white rounded-lg"></div>
+            <div class="w-6 h-1 bar bg-white rounded-lg"></div>
+            <div class="w-6 h-1 bar bg-white rounded-lg"></div>
+          </button>
+    
+        </div>
+    
+    
+        <ul class="hidden sm:flex text-gray-400 justify-end items-center gap-x-7 gap-y-5 mt-5 sm:mt-0"
+          id="links">
+          <li class="">
+            <a href="/" class="hover:text-gray-300 active">Home</a>
+          </li>
+          <li class="">
+            <a href="/login" class="hover:text-gray-300">Login</a>
+          </li>
+          <li class="">
+            <a href="logout" class="hover:text-gray-300">Logout</a>
+          </li>
+    
+        </ul>
+        </nav>
+    
+    <section class="mt-20">
+      <div class="flex flex-col w-full max-w-md p-12 space-y-4 mx-auto text-center bg-gray-900 text-gray-100">
+        <h1 class="text-3xl font-semibold">Please create an account</h1>
+        <% if (locals.messages.errors) { %>
+          <% messages.errors.forEach( el => { %>
+              <div class="text-red-600"><%= el.msg %></div>
+          <% }) %>    
+      <% } %>
+  
+        <form novalidate="" action="/signup" method='POST' class="space-y-4 ng-untouched ng-pristine ng-valid">
+          <div class="flex flex-col">
+            <input type="text" placeholder="Enter Your Username" name="userName" required class="rounded-t-md border-gray-600 bg-gray-900 text-gray-100 focus:ring-green-400 focus:border-green-400 focus:ring-2">
+            <input type="email" name="email" placeholder="Enter Your Email" required class="-mt-1 rounded-b-md border-gray-600 bg-gray-900 text-gray-100 focus:ring-green-400 focus:border-green-400 focus:ring-2">
+            <input type="password" placeholder="Enter Your Password" name="password" required class="rounded-t-md border-gray-600 bg-gray-900 text-gray-100 focus:ring-green-400 focus:border-green-400 focus:ring-2">
+      
+            <input type="password" placeholder="Confirm Password" name="confirmPassword" required class="-mt-1 rounded-b-md border-gray-600 bg-gray-900 text-gray-100 focus:ring-greenet-400 focus:border-green-400 focus:ring-2">
+      
+          </div>
+      
+          <input type="submit" class="px-8 py-3 space-x-2 font-semibold rounded bg-green-400 text-gray-900">
+        </form>
+      </div>
+      </section>
+
+    <script src="js/navbar.js"></script>
+</body>
+</html>

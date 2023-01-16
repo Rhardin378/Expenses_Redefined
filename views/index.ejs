@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>HomePage</title>
+</head>
+<body class="bg-gray-800 text-gray-100">
+    <nav class="flex flex-col bg-green-700 sm:flex-row flex-wrap md:items-center fixed top-0 z-20 w-full px-4 md:px-5 lg:px-16 py-2 justify-between">
+
+
+        <div class="flex justify-between sm:justify-around gap-x-2 text-white items-center">
+    
+          <!-- Link To Direct to Home Page -->
+          <!-- This can be a logo or a simple text (or both). Just write it in-between the anchor tag below-->
+          <a href="/expenses" class="text-3xl font-bold py-1 flex items-center ">
+            Expenses Redefined
+          </a>
+    
+    
+          <!-- Hamburger -->
+          <button class="sm:hidden cursor-pointer flex flex-col justify-center gap-y-1" id="hamburger" aria-label="menu">
+            <div class="w-6 h-1 bar bg-white rounded-lg"></div>
+            <div class="w-6 h-1 bar bg-white rounded-lg"></div>
+            <div class="w-6 h-1 bar bg-white rounded-lg"></div>
+          </button>
+    
+        </div>
+    
+    
+        <ul class="hidden sm:flex text-gray-400 justify-end items-center gap-x-7 gap-y-5 mt-5 sm:mt-0"
+          id="links">
+          <li class="hover:text-gray-300">
+            <a href="/" class="active">Home</a>
+          </li>
+          <li class="hover:text-gray-300">
+            <a href="/login" class="hover:text-gray-300">Login</a>
+          </li>
+          <li class="hover:text-gray-300">
+            <a href="logout" class="">Logout</a>
+          </li>
+    
+        </ul>
+    
+      </nav>
+    <div class="container mx-auto flex flex-col items-center px-4 py-16 text-center md:py-32 md:px-10 lg:px-32 xl:max-w-3xl">
+        <h1 class="text-4xl font-bold leading-none sm:text-5xl">Welcome to
+            <span class="text-green-400 underline">Expenses Redefined</span>
+        </h1>
+        <p class="px-8 mt-8 mb-12 text-lg">At Expenses Redefined it is our mission to provide users with a system to keep track of expenses that is both user friendly and intuitive.
+        </p>
+    <div class="flex flex-wrap justify-center">
+        <button class="px-8 py-3 m-2 text-lg font-semibold rounded bg-green-200 text-gray-900 hover:border hover:border-black"><a href="/signup">Sign Up</a></button>
+        <button class="px-8 py-3 m-2 text-lg border rounded text-gray-50 border-gray-700 hover:border-white"><a href="/login">Login</a></button>
+    </div>
+        <script src="js/navbar.js"></script>
+</body>
+</html>
