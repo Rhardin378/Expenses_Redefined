@@ -1,6 +1,4 @@
 const mongoose = require('mongoose')
-const express = require('express')
-const app = express()
 
 const connectDB = async () => {
   try {
@@ -10,9 +8,7 @@ const connectDB = async () => {
       useFindAndModify: false,
       useCreateIndex: true
     })
-    app.listen(process.env.PORT, ()=>{
-      console.log('Server is running, you better catch it!')
-  })   
+
     console.log(`MongoDB Connected: ${conn.connection.host}`)
   } catch (err) {
     console.error(err)
